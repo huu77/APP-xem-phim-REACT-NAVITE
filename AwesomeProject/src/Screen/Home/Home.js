@@ -1,28 +1,19 @@
 import React from "react";
-import { Button, View,Text } from "react-native";
+import { Button, View, Text } from "react-native";
 import { styles } from "./style";
 import LinearGradient from 'react-native-linear-gradient';
-function HomeScreen({navigation}) {
-    return (
+import Header from "./Header";
+import TopTimkiem from "./TopTimkiem";
+function HomeScreen({ navigation }) {
+  return (
 
-      <View style={styles.container}>
-         
+    <View style={styles.container}>
+      <Header />
+
+      <TopTimkiem navigation={navigation}/>
+
        
-  <LinearGradient
-        colors={['#D3959B', '#BFE6BA']}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 1 }}
-        style={styles.gradient}
-      >
-        <Text style={styles.textTitle}>WELLCOME TO MY APP</Text>
-         <Button
-          title="Go to Test"
-          style={styles.buttonTest}
-          onPress={() => navigation.navigate('Main')}
-        />
-      </LinearGradient>
-    
-      </View>
-    );
-  }
-  export default HomeScreen;
+    </View>
+  );
+}
+export default HomeScreen;
